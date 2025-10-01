@@ -9,6 +9,9 @@ The script then verifies the image is pullable from ACR by first clearing the lo
 
 The script uses both `oras` and `docker` commands to fetch and inspect the image manifest, confirming that the layers are indeed zstd-compressed.
 
+> [!NOTE]
+> As of 2025-09-30, ACR still does not support `Range` header requests when downloading `zstd:chunked` artifacts through the `GET myregistry.azurecr.io/v2/<repo>/blobs/sha256:<digest>` registry data plane API.
+
 ## Files
 
 - `README.md` - this file.
